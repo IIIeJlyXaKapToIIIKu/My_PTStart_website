@@ -61,11 +61,13 @@ main .welcome-message h1 {
 main .wrapper {
     width: 76%;
     margin: 0 auto;
+    height: 700px;
 }
 
 main .main-about {
     display: flex;
     padding: 100px 0 100px 0;   
+    height: 500px;
 }
 
 .about-right {
@@ -84,4 +86,28 @@ main .main-about {
 
 .mac-img {
     max-width: 140%;
+}
+
+#myButton {
+    width: 120px;
+    height: 30px;
+    background-color: #d2d4d6;
+    border: 1px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+}
+
+#demo img {
+    margin-top: 20px;
+    width: 50%;
+}
+
+.button_js {
+    height: 200px;
+}
+
+.button_js p {
+    height: 200px;
 }
