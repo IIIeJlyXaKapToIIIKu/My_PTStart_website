@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    background: #111111;
+}
+
+.header-logo {
+    color: #fff;
+    font-weight: 24px;
+    cursor: pointer;
+    margin-top: 28px;
+    margin-left: 12%;
+    font-weight: bold;
+}
+
+nav {
+    margin-top: 28px;
+    margin-left: 60%;
+}
+
+.top-nav a {
+    color: #fff;
+    font-size: 14px;
+    padding: 13px 16px;
+    font-weight: bold;
+}
+
+.top-nav a:hover {
+    transition: 0.2s;
+    border-bottom: 3px solid #fcac45;
+}
+
+main .welcome-message {
+    background: #111;
+    text-align: center;
+    padding: 270px 0 425px 0;
+}
+
+main .welcome-message h1 {
+    color: #999;
+    font-size: 30px;
+}
+
+.PT_Start {
+    color: #fcac45;
+}
+
+main .wrapper {
+    width: 76%;
+    margin: 0 auto;
+}
+
+main .main-about {
+    display: flex;
+    padding: 100px 0 100px 0;   
+}
+
+.about-right {
+    margin-left: 275px;
+}
+
+.about-right h1 {
+    border-bottom: 4px solid #fcac45;
+    padding-bottom: 20px;
+}
+
+.about-right p {
+    margin: 35px 0 50px 0;
+    color: #808080;
+}
+
+.mac-img {
+    max-width: 140%;
+}
