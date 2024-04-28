@@ -13,7 +13,7 @@
 <body>
     <main>
         <div class="welcome-message">
-            <h1>Авторизуйтесь!</h1>
+            <h1>Страница постов!</h1>
             <?php 
                 if (!isset($_COOKIE['User'])) {
                     ?>

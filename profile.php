@@ -59,9 +59,10 @@
                 <h1>HELLO, <?php echo $_COOKIE['User'];?>! START POSTING <span class="PT_Start">HERE</span></h1>
             </h1>
             <div class="posting-area">
-                <form action="profile.php" method="POST">
+                <form action="profile.php" method="POST" enctype="multipart/form-data" name="upload">
                     <input type="text" class="post-name" name="title" placeholder="Name of your post"><br>
                     <textarea name="text" cols="30" rows="10" placeholder="Write your post here" class="post-text"></textarea><br>
+                    <input type="file" class="post-file" name="file" /><br>
                     <button type="submit" class="btn_reg" name="submit">Upload post!</button>
                 </form>
             </div>
@@ -86,5 +87,20 @@
         $sql = "INSERT INTO posts (title, main_text) VALUES ('$title', '$main_text')";
 
         if (!mysqli_query($link, $sql)) die ("Не удалось добавить пост");
+        if(!empty($_FILES["file"]))
+        {
+            if (((@$_FILES["file"]["type"] == "image/gif") || (@$_FILES["file"]["type"] == "image/jpeg")
+            || (@$_FILES["file"]["type"] == "image/jpg") || (@$_FILES["file"]["type"] == "image/pjpeg")
+            || (@$_FILES["file"]["type"] == "image/x-png") || (@$_FILES["file"]["type"] == "image/png"))
+            && (@$_FILES["file"]["size"] < 102400))
+            {
+                move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
+                echo "Load in:  " . "upload/" . $_FILES["file"]["name"];
+            }
+            else
+            {
+                echo "upload failed!";
+            }
+        }
     }
 ?>
