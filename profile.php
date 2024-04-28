@@ -54,7 +54,37 @@
                 </div>
             </div>
         </div>
+        <div class="posting-container">
+            <div class="posting-message">
+                <h1>HELLO, <?php echo $_COOKIE['User'];?>! START POSTING <span class="PT_Start">HERE</span></h1>
+            </h1>
+            <div class="posting-area">
+                <form action="profile.php" method="POST">
+                    <input type="text" class="post-name" name="title" placeholder="Name of your post"><br>
+                    <textarea name="text" cols="30" rows="10" placeholder="Write your post here" class="post-text"></textarea><br>
+                    <button type="submit" class="btn_reg" name="submit">Upload post!</button>
+                </form>
+            </div>
+        </div>
+        </div>
     </main>
     <script type="text/javascript" src="js/button.js"></script>
 </body>
 </html>
+
+<?php 
+    require_once('db.php');
+
+    $link = mysqli_connect('127.0.0.1', 'root', 'rtt532mm', 'usersdb');
+
+    if (isset($_POST['submit'])) {
+        $title = $_POST['title'];
+        $main_text = $_POST['text'];
+
+        if (!$title || !$main_text) die ("Заполните все поля");
+
+        $sql = "INSERT INTO posts (title, main_text) VALUES ('$title', '$main_text')";
+
+        if (!mysqli_query($link, $sql)) die ("Не удалось добавить пост");
+    }
+?>
